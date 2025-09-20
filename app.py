@@ -6,9 +6,9 @@ from dash import Dash, dcc, html, Input, Output, callback, ctx
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
-# creds, _ = default()
-# gc = gspread.authorize(creds)
-gc = gspread.service_account(filename = 'C:/Users/ambar/AppData/Roaming/gspread/service_account.JSON')
+creds, _ = default()
+gc = gspread.authorize(creds)
+# gc = gspread.service_account(filename = 'C:/Users/ambar/AppData/Roaming/gspread/service_account.JSON')
 sh = gc.open("Dutch wordlist")
 sheetdata = sh.sheet1.get_all_values()
 sheetdata[0]
